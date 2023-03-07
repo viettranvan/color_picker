@@ -48,8 +48,12 @@ ColorPicker.enableColorPicker(context, (color) {
 
 ## Screenshots
 * Android and Ios
-![android](https://user-images.githubusercontent.com/63132038/223469655-52dfb309-42ca-44f8-b9eb-d30bee38de8a.gif)
-![ios](https://user-images.githubusercontent.com/63132038/223469674-2e1711c9-2d2a-4709-a066-6ed0471bebb1.gif)
+
+<p align="middle">
+  <img src="https://user-images.githubusercontent.com/63132038/223469655-52dfb309-42ca-44f8-b9eb-d30bee38de8a.gif" width="48%">
+  <img src="https://user-images.githubusercontent.com/63132038/223469674-2e1711c9-2d2a-4709-a066-6ed0471bebb1.gif" width="48%">
+</p>
+
 * Web
 ![web](https://user-images.githubusercontent.com/63132038/223469864-7d0bcd74-bccd-4f95-9a9c-661985286135.gif)
 
