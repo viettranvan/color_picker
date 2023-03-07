@@ -19,5 +19,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-  
+  assets:
+    - packages/eye_dropper/assets/color-picker-overlay.png

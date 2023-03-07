@@ -24,7 +24,7 @@ class EyeDropperOverlay extends StatelessWidget {
                 height: kEyeDropperSize * 4,
                 alignment: Alignment.bottomRight,
                 child: Image.asset(
-                  'assets/color-picker-overlay.png',
+                  'packages/eye_dropper/assets/color-picker-overlay.png',
                   fit: BoxFit.fitHeight,
                   color: overlayColor,
                   width: kEyeDropperSize * 4,

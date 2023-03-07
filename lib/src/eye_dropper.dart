@@ -82,7 +82,7 @@ class _EyeDropperState extends State<EyeDropper> {
           ),
         ),
         Visibility(
-          visible: (_colorNotifier.value != null),
+          visible: !(_colorNotifier.value != null && widget.haveTextColorWidget == false),
           child: Positioned(
             left: _offsetNotifier.value.dx - 30,
             top: _offsetNotifier.value.dy + 20,
