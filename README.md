@@ -1,11 +1,11 @@
 <!--
 
 -->
-# color_picker
+# eye_dropper
 
 Pick colors from your application anywhere easily and 
 
-[Web Example](https://viettranvan.github.io/color_picker/#/)
+[Web Example](https://viettranvan.github.io/eye_dropper/#/)
 
 ## Features
 
@@ -29,19 +29,15 @@ Wrap `MaterialApp.builder` or `WidgetsApp.builder` with `ColorPicker`:
 
 ```dart
 MaterialApp(
-    title: 'Flutter Demo',
-    theme: ThemeData(
-        primarySwatch: Colors.blue,
-    ),
-    home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    builder: (context, child) => ColorPicker(child: child!),
+    home: const MyHomePage(title: 'Flutter Color Picker Demo'),
+    builder: (context, child) => EyeDropper(child: child!),
 ),
 ```
 
-Anywhere you want to use, call `ColorPicker.enableColorPicker()` method:
+Anywhere you want to use, call ` EyeDropper.enableEyeDropper()` method:
 
 ```dart
-ColorPicker.enableColorPicker(context, (color) {
+EyeDropper.enableEyeDropper(context, (color) {
   // handle the action you want after getting the color
 });
 ```
@@ -57,4 +53,4 @@ ColorPicker.enableColorPicker(context, (color) {
 * Web
 ![web](https://user-images.githubusercontent.com/63132038/223469864-7d0bcd74-bccd-4f95-9a9c-661985286135.gif)
 
-For testing in web, click [here](https://viettranvan.github.io/color_picker/#/)
+For testing in web, click [here](https://viettranvan.github.io/eye_dropper/#/)

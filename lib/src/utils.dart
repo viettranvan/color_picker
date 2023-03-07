@@ -1,6 +1,6 @@
-part of color_picker;
+part of eye_dropper;
 
-const double kColorPickerSize = 16;
+const double kEyeDropperSize = 16;
 const Size kOverlaySize = Size(64, 88);
 
 Color getPixelFromByteData(

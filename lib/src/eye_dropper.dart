@@ -1,7 +1,7 @@
-part of color_picker;
+part of eye_dropper;
 
-class ColorPicker extends StatefulWidget {
-  const ColorPicker({
+class EyeDropper extends StatefulWidget {
+  const EyeDropper({
     super.key,
     required this.child,
     this.haveTextColorWidget = true,
@@ -10,29 +10,29 @@ class ColorPicker extends StatefulWidget {
   final Widget child;
   final bool haveTextColorWidget;
 
-  static void enableColorPicker(
-      BuildContext context, Function(Color?)? onColorPicker) async {
-    _ColorPickerState? state =
-        context.findAncestorStateOfType<_ColorPickerState>();
-    state?.enableColorPicker(onColorPicker);
+  static void enableEyeDropper(
+      BuildContext context, Function(Color?)? onEyeDropper) async {
+    _EyeDropperState? state =
+        context.findAncestorStateOfType<_EyeDropperState>();
+    state?.enableEyeDropper(onEyeDropper);
   }
 
   @override
-  State<ColorPicker> createState() => _ColorPickerState();
+  State<EyeDropper> createState() => _EyeDropperState();
 }
 
-class _ColorPickerState extends State<ColorPicker> {
+class _EyeDropperState extends State<EyeDropper> {
   final GlobalKey _renderKey = GlobalKey();
 
   ui.Image? _image;
-  bool _enableColorPicker = false;
+  bool _enableEyeDropper = false;
 
   final _offsetNotifier = ValueNotifier<Offset>(const Offset(0, 0));
   final _colorNotifier = ValueNotifier<Color?>(null);
   final _byteDataStateNotifier = ValueNotifier<ByteData?>(null);
-  Function(Color?)? _onColorPicker;
+  Function(Color?)? _onEyeDropper;
 
-  void enableColorPicker(Function(Color?)? onColorPicker) async {
+  void enableEyeDropper(Function(Color?)? onEyeDropper) async {
     var renderBox = _renderKey.currentContext!.findRenderObject() as RenderBox;
     final size = renderBox.size;
 
@@ -45,11 +45,11 @@ class _ColorPickerState extends State<ColorPicker> {
 
     setState(() {
       // enable color picker
-      _enableColorPicker = true;
+      _enableEyeDropper = true;
       // place the color picker overlay's position in the center
       updatePosition(Offset(size.width / 2, size.height / 2));
 
-      _onColorPicker = onColorPicker;
+      _onEyeDropper = onEyeDropper;
     });
   }
 
@@ -68,16 +68,16 @@ class _ColorPickerState extends State<ColorPicker> {
           ),
         ),
         Visibility(
-          visible: _enableColorPicker,
+          visible: _enableEyeDropper,
           child: Positioned(
             left: getOverlayPosition().dx,
             top: getOverlayPosition().dy,
             child: Listener(
               onPointerMove: onPointerMove,
               onPointerUp: onPointerUp,
-              child: ColorPickerOverlay(
-                  color: _colorNotifier.value ?? Colors.transparent,
-                ),
+              child: EyeDropperOverlay(
+                color: _colorNotifier.value ?? Colors.transparent,
+              ),
             ),
           ),
         ),
@@ -108,30 +108,30 @@ class _ColorPickerState extends State<ColorPicker> {
   Offset getOverlayPosition() {
     double dx = _offsetNotifier.value.dx - kOverlaySize.width / 2;
     double dy =
-        _offsetNotifier.value.dy - kOverlaySize.height + kColorPickerSize / 2;
+        _offsetNotifier.value.dy - kOverlaySize.height + kEyeDropperSize / 2;
     return Offset(dx, dy);
   }
 
   void onPointerDown(PointerDownEvent event) {
-    if (_enableColorPicker) {
+    if (_enableEyeDropper) {
       updatePosition(event.position);
     }
   }
 
   void onPointerMove(PointerMoveEvent event) {
-    if (_enableColorPicker) {
+    if (_enableEyeDropper) {
       updatePosition(event.position);
     }
   }
 
   void onPointerUp(PointerUpEvent event) async {
-    if (_enableColorPicker) {
+    if (_enableEyeDropper) {
       if (_colorNotifier.value != null) {
-        _onColorPicker?.call(_colorNotifier.value);
+        _onEyeDropper?.call(_colorNotifier.value);
       }
 
       setState(() {
-        _enableColorPicker = false;
+        _enableEyeDropper = false;
         _offsetNotifier.value = const Offset(0, 0);
         _colorNotifier.value = null;
         _image = null;

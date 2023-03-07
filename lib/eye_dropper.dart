@@ -1,4 +1,4 @@
-library color_picker;
+library eye_dropper;
 
 import 'dart:typed_data';
 import 'dart:ui' as ui;
@@ -6,6 +6,6 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-part 'src/color_picker.dart';
-part 'src/color_picker_overlay.dart';
+part 'src/eye_dropper.dart';
+part 'src/eye_dropper_overlay.dart';
 part 'src/utils.dart';

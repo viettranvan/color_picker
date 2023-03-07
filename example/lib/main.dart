@@ -1,4 +1,4 @@
-import 'package:color_picker/color_picker.dart';
+import 'package:color_picker/eye_dropper.dart';
 import 'package:flutter/material.dart';
 
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Color Picker Demo'),
-      builder: (context, child) => ColorPicker(child: child!),
+      builder: (context, child) => EyeDropper(child: child!),
     );
   }
 }
@@ -113,7 +113,7 @@ List<Color> colorArray = [
      
             GestureDetector(
               onTap: () {
-                ColorPicker.enableColorPicker(context, (color) {
+                EyeDropper.enableEyeDropper(context, (color) {
                   setState(() {
                     _color = color;
                   });

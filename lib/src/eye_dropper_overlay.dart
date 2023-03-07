@@ -1,7 +1,7 @@
-part of color_picker;
+part of eye_dropper;
 
-class ColorPickerOverlay extends StatelessWidget {
-  const ColorPickerOverlay({
+class EyeDropperOverlay extends StatelessWidget {
+  const EyeDropperOverlay({
     Key? key,
     required this.color,
     this.overlayColor,
@@ -20,15 +20,15 @@ class ColorPickerOverlay extends StatelessWidget {
           Stack(
             children: [
               Container(
-                width: kColorPickerSize * 4,
-                height: kColorPickerSize * 4,
+                width: kEyeDropperSize * 4,
+                height: kEyeDropperSize * 4,
                 alignment: Alignment.bottomRight,
                 child: Image.asset(
                   'assets/color-picker-overlay.png',
                   fit: BoxFit.fitHeight,
                   color: overlayColor,
-                  width: kColorPickerSize * 4,
-                  height: kColorPickerSize * 4,
+                  width: kEyeDropperSize * 4,
+                  height: kEyeDropperSize * 4,
                 ),
               ),
               Positioned(
@@ -44,12 +44,12 @@ class ColorPickerOverlay extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Container(
-            height: kColorPickerSize,
-            width: kColorPickerSize,
+            height: kEyeDropperSize,
+            width: kEyeDropperSize,
             decoration: BoxDecoration(
                 color: color,
-                border:
-                    Border.all(width: 1.0, color: overlayColor ?? Colors.black45),
+                border: Border.all(
+                    width: 1.0, color: overlayColor ?? Colors.black45),
                 borderRadius: BorderRadius.circular(16)),
           ),
         ],
