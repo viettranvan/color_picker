@@ -16,16 +16,16 @@ Pick colors from your application anywhere easily and
 Add the dependency: 
 
 ```bash
-$ flutter pub add color_picker
+$ flutter pub add eye_dropper
 ```
 
 Import the package:
 
 ```dart
-import 'package:color_picker/color_picker.dart';
+import 'package:eye_dropper/eye_dropper.dart';
 ```
 
-Wrap `MaterialApp.builder` or `WidgetsApp.builder` with `ColorPicker`:
+Wrap `MaterialApp.builder` or `WidgetsApp.builder` with `EyeDropper`:
 
 ```dart
 MaterialApp(
