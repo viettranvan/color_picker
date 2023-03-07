@@ -57,4 +57,4 @@ ColorPicker.enableColorPicker(context, (color) {
 * Web
 ![web](https://user-images.githubusercontent.com/63132038/223469864-7d0bcd74-bccd-4f95-9a9c-661985286135.gif)
 
-For testng in web, click [here](https://viettranvan.github.io/color_picker/#/)
+For testing in web, click [here](https://viettranvan.github.io/color_picker/#/)
